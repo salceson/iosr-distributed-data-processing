@@ -1,2 +1,9 @@
 GET      /                                 @controllers.Application.index
-GET      /simple                           @controllers.Application.departurePerformanceForAirports
+GET      /weekdays                         @controllers.Application.weekdaysPerformanceForm
+POST     /weekdays                         @controllers.Application.weekdaysPerformance
+GET      /airports                         @controllers.Application.airportsPopularityForm
+POST     /airports                         @controllers.Application.airportsPopularity
+GET      /airportcarriers                  @controllers.Application.airportTopCarriersForm
+POST     /airportcarriers                  @controllers.Application.airportTopCarriers
+GET      /routemean                        @controllers.Application.routeMeanForm
+POST     /routemean                        @controllers.Application.routeMean

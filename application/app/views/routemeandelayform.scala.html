@@ -1,0 +1,41 @@
+@import controllers.Application.DurationFromToRequest
+
+@(form: Form[DurationFromToRequest])(implicit messages: Messages)
+
+@main("Route Mean Delay")("routeDelay") {
+  <p>Select the duration and the route you want to calculate the ranking from.</p>
+  <p>A week is calculated as every 7 days in the year (e. g. 01.01 - 07.01 is first week, 08.01 - 14.01 second, etc.).</p>
+  @helper.form(action = routes.Application.routeMean()) {
+    @helper.input(form("yearFrom")) { (id, name, value, args) =>
+      <div class="form-group">
+        <input type="text" class="form-control" value="@value" id="@id" name="@name" @toHtmlArgs(args)>
+      </div>
+    }
+    @helper.input(form("weekFrom")) { (id, name, value, args) =>
+      <div class="form-group">
+        <input type="text" class="form-control" value="@value" id="@id" name="@name" @toHtmlArgs(args)>
+      </div>
+    }
+    @helper.input(form("yearTo")) { (id, name, value, args) =>
+      <div class="form-group">
+        <input type="text" class="form-control" value="@value" id="@id" name="@name" @toHtmlArgs(args)>
+      </div>
+    }
+    @helper.input(form("weekTo")) { (id, name, value, args) =>
+      <div class="form-group">
+        <input type="text" class="form-control" value="@value" id="@id" name="@name" @toHtmlArgs(args)>
+      </div>
+    }
+    @helper.input(form("from")) { (id, name, value, args) =>
+      <div class="form-group">
+        <input type="text" class="form-control" value="@value" id="@id" name="@name" @toHtmlArgs(args)>
+      </div>
+    }
+    @helper.input(form("to")) { (id, name, value, args) =>
+      <div class="form-group">
+        <input type="text" class="form-control" value="@value" id="@id" name="@name" @toHtmlArgs(args)>
+      </div>
+    }
+    <input type="submit" value="Submit" class="btn btn-success">
+  }
+}

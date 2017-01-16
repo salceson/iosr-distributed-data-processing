@@ -13,7 +13,7 @@ conn = psycopg2.connect(dbname='iosr', user=user, password=password)
 
 cursor = conn.cursor()
 
-sql_template = 'INSERT INTO public.flights ("year", "week", "carrier", "from", "to", "arrival_sum", "departure_sum",' \
+sql_template = 'INSERT INTO public.carriers ("year", "week", "carrier", "from", "to", "arrival_sum", "departure_sum",' \
                ' "num") VALUES (%s, %s, %s, %s, %s, %s, %s, %s);'
 
 for filename in argv:
